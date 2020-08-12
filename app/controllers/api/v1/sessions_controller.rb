@@ -1,5 +1,5 @@
 class Api::V1::SessionsController < Devise::SessionsController
-  include UserConcern
+
 
   def create
     user = User.find_by_email(params[:email])
