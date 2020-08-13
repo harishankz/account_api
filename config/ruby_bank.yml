@@ -1,5 +1,5 @@
 default: &default
-  customer_api_endpoint: "http://localhost:8000/api/v1/"
+  customer_api_endpoint: "http://localhost:4000/api/v1/"
 
 development:
   <<: *default

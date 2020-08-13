@@ -23,7 +23,7 @@ class Api::V1::AccountsController < ApplicationController
     if params[:customer].blank?
       customer_api = CustomerApi.new(current_user.token)
       response = customer_api.create(params[:customer_params])
-      @account.customer_id = response[:body][:user_id]
+      @account.customer_id = response[:body][:user_id] if [200, 201].include? response[:status]
     end
 
     if @account.save
